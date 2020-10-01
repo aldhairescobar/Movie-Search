@@ -5,10 +5,11 @@ function SearchMovies() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
+  const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
   const searchMovies = async (e) => {
     e.preventDefault();
 
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_API_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
 
     try {
       const res = await fetch(url);
