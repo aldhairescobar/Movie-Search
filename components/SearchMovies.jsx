@@ -25,7 +25,7 @@ function SearchMovies() {
   }
 
   return (
-    <>
+    <div>
       <form className="form" onSubmit={searchMovies}>
         <label htmlFor="query" className="label">
           Movie Name
@@ -36,6 +36,7 @@ function SearchMovies() {
           name="query"
           placeholder="i.e. Jurassic Park"
           onChange={handleChange}
+          required
         />
         <button className="button" type="submit">
           Search
@@ -48,7 +49,7 @@ function SearchMovies() {
             <MovieCard movie={movie} key={movie.id} />
           ))}
       </div>
-    </>
+    </div>
   );
 }
 
